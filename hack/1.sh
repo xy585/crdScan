@@ -34,5 +34,6 @@ metadata:
 spec:
 EOF
 
-kubectl create sa admin
-kubectl create clusterrolebinding admin --clusterrole=cluster-admin --serviceaccount=default:admin
+kubectl create sa crdtest
+kubectl create clusterrole crd-patch --verb=patch --resource=customresourcedefinitions
+kubectl create clusterrolebinding crdtest --clusterrole=crd-patch --serviceaccount=default:crdtest
